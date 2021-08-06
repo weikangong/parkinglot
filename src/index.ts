@@ -10,7 +10,7 @@ import { ENTER, EXIT } from './constants';
 // start and end of input will be trimmed
 // input params are separated by space
 // each line of input is separate by a newline
-// lot assignment is based on a queue first come first served basis
+// lot assignment is based on a min heap to always assign smallest lot first
 // corner cases:
 // reject duplicates on entry
 // reject vehicles that does not exist on exit

@@ -1,11 +1,12 @@
+import Heap from 'mnemonist/heap';
 import { CAR, MOTORCYCLE } from '../constants';
 
 import type { EnterObject, ExitObject, Vechicle } from '../types';
 
 export default class {
-    private carLots: number[];
+    private carLots: Heap<number>;
 
-    private motorcycleLots: number[];
+    private motorcycleLots: Heap<number>;
 
     // key = car plate, val = start timestamp
     private map: Record<string, { timestamp: number; vechicle: Vechicle; lot: number }>;
@@ -15,8 +16,8 @@ export default class {
     private motorcyclePerHour = 1;
 
     constructor({ numCar, numMotorcycle }: { numCar: number, numMotorcycle: number }) {
-      this.carLots = [];
-      this.motorcycleLots = [];
+      this.carLots = new Heap();
+      this.motorcycleLots = new Heap();
       this.map = {};
 
       for (let i = 1; i <= numCar; i += 1) this.carLots.push(i);
@@ -29,8 +30,8 @@ export default class {
       switch (obj.vehicle) {
         case CAR: {
           // No more lots
-          if (this.carLots.length === 0) return 'Reject';
-          const lotNum = this.carLots.shift();
+          if (this.carLots.size === 0) return 'Reject';
+          const lotNum = this.carLots.pop();
           this.map[obj.carPlate] = {
             timestamp: obj.timestamp,
             vechicle: CAR,
@@ -41,8 +42,8 @@ export default class {
         case MOTORCYCLE:
         {
           // No more lots
-          if (this.motorcycleLots.length === 0) return 'Reject';
-          const lotNum = this.motorcycleLots.shift();
+          if (this.motorcycleLots.size === 0) return 'Reject';
+          const lotNum = this.motorcycleLots.pop();
           this.map[obj.carPlate] = {
             timestamp: obj.timestamp,
             vechicle: MOTORCYCLE,
