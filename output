@@ -1,0 +1,12 @@
+yarn run v1.22.10
+$ ts-node ./src/index.ts
+parkLotSystem default_1 {
+  carPerHour: 2,
+  motorcyclePerHour: 1,
+  enter: [Function (anonymous)],
+  exit: [Function (anonymous)],
+  carLots: [ 1, 2, 3 ],
+  motorcycleLots: [ 1, 2, 3, 4 ],
+  map: {}
+}
+Done in 0.93s.
