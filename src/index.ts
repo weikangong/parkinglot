@@ -20,6 +20,7 @@ const rl = readline.createInterface({
   input: process.stdin,
   // output: process.stdout,
 });
+
 function exitProgram(error: Error) {
   console.log(error.message);
   rl.close();

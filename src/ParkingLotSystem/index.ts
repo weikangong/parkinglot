@@ -25,6 +25,7 @@ export default class {
     }
 
     enter = (obj: EnterObject) => {
+      // Duplicate
       if (this.map[obj.carPlate]) return 'Reject, duplicate';
 
       switch (obj.vehicle) {
@@ -56,7 +57,8 @@ export default class {
     }
 
     exit = (obj: ExitObject) => {
-      if (!this.map[obj.carPlate]) return 'Reject';
+      // Does not exist
+      if (!this.map[obj.carPlate]) return 'Reject, does not exist';
 
       const { timestamp, vechicle, lot } = this.map[obj.carPlate];
       const diff = obj.timestamp - timestamp;
