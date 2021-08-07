@@ -9,7 +9,8 @@
 Either:
 1. Typing inputs manually in terminal: `yarn run start`
 2. Feed in input files: `yarn run start < ./inputs/input1.txt`
-A few sample input files have been populated in `./inputs`
+
+> A few sample input files have been populated in `./inputs`
 
 # Assumptions
 1. Accept upper/lower case words as input
