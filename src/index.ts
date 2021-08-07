@@ -5,17 +5,6 @@ import ParkingLotSystem from './ParkingLotSystem';
 
 import { ENTER, EXIT } from './constants';
 
-// assumption
-// accept upper/lower case words as input
-// start and end of input will be trimmed
-// input params are separated by space
-// each line of input is separate by a newline
-// lot assignment is based on a min heap to always assign smallest lot first
-// corner cases:
-// reject duplicates on entry
-// reject vehicles that does not exist on exit
-// reject vehicles with negative time spent on exit
-
 const rl = readline.createInterface({
   input: process.stdin,
   // output: process.stdout,

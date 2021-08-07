@@ -8,7 +8,6 @@ export default class {
 
     private motorcycleLots: Heap<number>;
 
-    // key = car plate, val = start timestamp
     private map: Record<string, { timestamp: number; vechicle: Vechicle; lot: number }>;
 
     private carPerHour = 2;
